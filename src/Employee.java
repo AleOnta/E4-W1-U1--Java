@@ -10,8 +10,7 @@ public class Employee {
     private Levels level;
     private Departments department;
     // to create ID
-    private Random rand = new Random();
-    private int upperBound = 1234;
+    private final Random rand = new Random();
 
     // Constructors
     private Employee() {
@@ -48,6 +47,7 @@ public class Employee {
                 '}';
     }
     private String generateID(String id) {
+        int upperBound = 1234;
         int dynamicID = rand.nextInt(upperBound);
         return id + dynamicID;
     }
